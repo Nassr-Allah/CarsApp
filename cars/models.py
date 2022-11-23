@@ -11,6 +11,8 @@ class Car(models.Model):
 
 class CarModel(models.Model):
     model_name = models.CharField(max_length=30, default="", unique=True)
+    model_year = models.CharField(max_length=4, default="")
+    model_engine = models.CharField(max_length=10, default="")
     car_model = models.ForeignKey(Car, on_delete=models.CASCADE)
 
     def __str__(self):
